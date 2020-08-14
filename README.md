@@ -30,35 +30,57 @@ services:
 ## Common commands
 
 ```bash
-# Starts existing containers for a service.
+# Builds, (re)creates, starts, and attaches to containers for a service
+docker-compose up
+docker-compose up -d                  # Background detached mode
+docker-compose up --build             # Forcefully Build images before starting containers
+docker-compose up --no-build          # Skips the image build process
+docker-compose up --force-recreate    # Recreate containers even if their configuration and image haven’t changed.
+docker-compose -f filename.yml -f filenamelocal.yml up    # Use custom yml files
+
+# Stops containers and removes containers, networks, volumes, and images created by up
+docker-compose down
+
+# Starts existing containers
 docker-compose start
 
-# Stops running containers without removing them.
+# Stops running containers without removing them
 docker-compose stop
-
-# Pauses running containers of a service.
-docker-compose pause
-
-# Unpauses paused containers of a service.
-docker-compose unpause
-
-# Lists containers
-docker-compose ps
-
-# Builds, (re)creates, starts, and attaches to containers for a service.
-docker-compose up
-docker-compose up -d                # up and go to background
-docker-compose up --build           # with containers building
-docker-compose up --force-recreate  # force recreate
-
-# Stops containers and removes containers, networks, volumes, and images created by up.
-docker-compose down
+docker-compose stop -t    # Specify a shutdown timeout in seconds (default 10)
 
 # Restart containers
 docker-compose restart
 
-# Use two configs for dev environment
-docker-compose -f docker-compose.yml -f docker-compose-dev.yml up --build
+# Pauses running containers of a service
+docker-compose pause
+
+# Unpauses paused containers of a service
+docker-compose unpause
+
+# Shows list of containers for a service
+docker-compose ps     # Use docker-compose.yml
+docker-compose ps -q  # Only display IDs
+
+# Prints the version of docker-compose
+docker-compose version
+
+# Validate and view the Compose file
+docker-compose config
+
+# View the processes running within each service container
+docker-compose top
+
+# Pulls an image associated with a service defined in a docker-compose.yml file, but does not start containers based on those images
+docker-compose pull
+
+# Pushes images for services to their respective registry/repository
+docker-compose push
+
+# Removes stopped service containers. By default, anonymous volumes attached to containers are not removed. You can override this with -v. To list all volumes, use docker volume ls
+docker-compose rm
+docker-compose rm -f    # Don’t ask to confirm the removal
+docker-compose rm -s    # Stop the containers, if required, before removing
+docker-compose rm -v    # Remove any anonymous volumes attached to containers
 ```
 
 ## Config file reference
@@ -213,4 +235,5 @@ networks:
 
 ## References
 
-Based off cheatsheet from <https://devhints.io/docker-compose>.
+<https://devhints.io/docker-compose>.
+<https://cheatography.com/gauravpandey44/cheat-sheets/docker-compose/>.
