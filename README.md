@@ -238,5 +238,6 @@ networks:
 
 ## References
 
-<https://devhints.io/docker-compose>.
+<https://devhints.io/docker-compose>
+
 <https://cheatography.com/gauravpandey44/cheat-sheets/docker-compose/>.
