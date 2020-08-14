@@ -4,7 +4,7 @@
 
 ```yml
 # docker-compose.yml
-version: '3'
+version: '3.8'
 
 services:
  
@@ -239,5 +239,6 @@ networks:
 
 ## References
 * [Official documentation](https://docs.docker.com/compose)
+    * [Compose file version 3 reference](https://docs.docker.com/compose/compose-file/)
 * <https://devhints.io/docker-compose>
 * <https://cheatography.com/gauravpandey44/cheat-sheets/docker-compose>
