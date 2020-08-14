@@ -240,4 +240,4 @@ networks:
 
 <https://devhints.io/docker-compose>
 
-<https://cheatography.com/gauravpandey44/cheat-sheets/docker-compose/>.
+<https://cheatography.com/gauravpandey44/cheat-sheets/docker-compose>
