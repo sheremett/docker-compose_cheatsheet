@@ -35,7 +35,8 @@ docker-compose up
 docker-compose up -d                  # Background detached mode
 docker-compose up --build             # Forcefully Build images before starting containers
 docker-compose up --no-build          # Skips the image build process
-docker-compose up --force-recreate    # Recreate containers even if their configuration and image haven’t changed.
+docker-compose up --force-recreate    # Recreate containers even if their configuration
+                                      # and image haven’t changed
 docker-compose -f filename.yml -f filenamelocal.yml up    # Use custom yml files
 
 # Stops containers and removes containers, networks, volumes, and images created by up
@@ -70,13 +71,15 @@ docker-compose config
 # View the processes running within each service container
 docker-compose top
 
-# Pulls an image associated with a service defined in a docker-compose.yml file, but does not start containers based on those images
+# Pulls an image associated with a service defined in a docker-compose.yml file,
+# but does not start containers based on those images 
 docker-compose pull
 
 # Pushes images for services to their respective registry/repository
 docker-compose push
 
-# Removes stopped service containers. By default, anonymous volumes attached to containers are not removed. You can override this with -v. To list all volumes, use docker volume ls
+# Removes stopped service containers. By default, anonymous volumes attached to containers
+#  are not removed. You can override this with -v. To list all volumes, use docker volume ls
 docker-compose rm
 docker-compose rm -f    # Don’t ask to confirm the removal
 docker-compose rm -s    # Stop the containers, if required, before removing
