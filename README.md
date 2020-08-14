@@ -59,8 +59,8 @@ docker-compose pause
 docker-compose unpause
 
 # Shows list of containers for a service
-docker-compose ps     # Use docker-compose.yml
-docker-compose ps -q  # Only display IDs
+docker-compose ps       # Use docker-compose.yml
+docker-compose ps -q    # Only display IDs
 
 # Prints the version of docker-compose
 docker-compose version
