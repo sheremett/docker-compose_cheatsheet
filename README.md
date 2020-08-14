@@ -1,5 +1,4 @@
 # docker-compose Cheatsheet
-Cheatsheet for docker-compose
 ## Basic config example
 
 ```yml
@@ -23,7 +22,7 @@ services:
         restart: unless-stopped
         volumes:
             - mongodb_api:/data/db
-
+    
     volumes:
         mongodb_api:
 ```
