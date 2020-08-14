@@ -1,7 +1,5 @@
 # docker-compose Cheatsheet
 
-## Links
-* [Official documentation](https://docs.docker.com/compose)
 ## Basic config example
 
 ```yml
@@ -240,6 +238,6 @@ networks:
 ```
 
 ## References
-
+* [Official documentation](https://docs.docker.com/compose)
 * <https://devhints.io/docker-compose>
 * <https://cheatography.com/gauravpandey44/cheat-sheets/docker-compose>
