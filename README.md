@@ -7,7 +7,7 @@
 version: '3.8'
 
 services:
- 
+
     frontend: 
         container_name: containername_frontend
         build: ./frontend
@@ -32,13 +32,13 @@ services:
 
 ```bash
 # Builds, (re)creates, starts, and attaches to containers for a service
-docker-compose up
-docker-compose up -d                  # Background detached mode
-docker-compose up --build             # Forcefully Build images before starting containers
-docker-compose up --no-build          # Skips the image build process
-docker-compose up --force-recreate    # Recreate containers even if their configuration
-                                      # and image haven’t changed
-docker-compose -f filename.yml -f filenamelocal.yml up    # Use custom yml files
+docker-compose up [OPTIONS]
+    -d                  # Background detached mode
+    --build             # Forcefully Build images before starting containers
+    --no-build          # Skips the image build process
+    --force-recreate    # Recreate containers even if their configuration
+                        # and image haven’t changed
+    -f config_prod.yml -f config_local.yml up    # Use overriding yml files
 
 # Stops containers and removes containers, networks, volumes, and images created by up
 docker-compose down
@@ -47,8 +47,8 @@ docker-compose down
 docker-compose start
 
 # Stops running containers without removing them
-docker-compose stop
-docker-compose stop -t    # Specify a shutdown timeout in seconds (default 10)
+docker-compose stop [OPTIONS]
+    -t    # Specify a shutdown timeout in seconds (default 10)
 
 # Restart containers
 docker-compose restart
@@ -60,8 +60,8 @@ docker-compose pause
 docker-compose unpause
 
 # Shows list of containers for a service
-docker-compose ps       # Use docker-compose.yml
-docker-compose ps -q    # Only display IDs
+docker-compose ps [OPTIONS]    # Use docker-compose.yml
+    -q    # Only display IDs
 
 # Prints the version of docker-compose
 docker-compose version
@@ -81,10 +81,10 @@ docker-compose push
 
 # Removes stopped service containers. By default, anonymous volumes attached to containers
 #  are not removed. You can override this with -v. To list all volumes, use docker volume ls
-docker-compose rm
-docker-compose rm -f    # Don’t ask to confirm the removal
-docker-compose rm -s    # Stop the containers, if required, before removing
-docker-compose rm -v    # Remove any anonymous volumes attached to containers
+docker-compose rm [OPTIONS]
+    -f    # Don’t ask to confirm the removal
+    -s    # Stop the containers, if required, before removing
+    -v    # Remove any anonymous volumes attached to containers
 ```
 
 ## Config file reference
